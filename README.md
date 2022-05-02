@@ -3,6 +3,9 @@
 ##### roddyFlix is an entertainment streaming service,  it offers a film and television series library.🔥🤓⚡️
 ##### roddyFLix can be accessed via the internet browser on your computer or via application software installed on tablet computers, smartphones, and digital media players.🚀📡🚀
 
+# Work in progress, check back next week.🚀🚀
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
