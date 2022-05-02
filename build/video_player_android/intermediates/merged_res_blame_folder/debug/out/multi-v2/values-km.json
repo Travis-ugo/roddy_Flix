@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/values-km/values-km.xml",
+            "map": [
+                {
+                    "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "726",
+                        "endColumns": "100",
+                        "endOffsets": "822"
+                    }
+                },
+                {
+                    "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f4578b5fe065e75fb607e599fd17e9a9/jetified-exoplayer-core-2.17.0/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,126,185,251,320,393,464,562,657",
+                        "endColumns": "70,58,65,68,72,70,97,94,68",
+                        "endOffsets": "121,180,246,315,388,459,557,652,721"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "map": [
+                {
+                    "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "726",
+                        "endColumns": "100",
+                        "endOffsets": "822"
+                    }
+                },
+                {
+                    "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f4578b5fe065e75fb607e599fd17e9a9/jetified-exoplayer-core-2.17.0/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,126,185,251,320,393,464,562,657",
+                        "endColumns": "70,58,65,68,72,70,97,94,68",
+                        "endOffsets": "121,180,246,315,388,459,557,652,721"
+                    }
+                }
+            ]
+        }
+    ]
+}

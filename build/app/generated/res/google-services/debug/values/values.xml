@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">60817574842-fhgb5abu1hmlqk8n50bngo54grc379pq.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">60817574842</string>
+    <string name="google_api_key" translatable="false">AIzaSyDplV93lkdWbuP6wW5snZ3wCUY4cqU8tkU</string>
+    <string name="google_app_id" translatable="false">1:60817574842:android:257eaeef3b0b0757e66b83</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDplV93lkdWbuP6wW5snZ3wCUY4cqU8tkU</string>
+    <string name="google_storage_bucket" translatable="false">roddy-f3546.appspot.com</string>
+    <string name="project_id" translatable="false">roddy-f3546</string>
+</resources>

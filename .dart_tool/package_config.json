@@ -176,6 +176,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_riverpod",
+      "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/flutter_riverpod-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/Travisk/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -356,6 +362,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "riverpod",
+      "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/riverpod-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/Travisk/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -370,6 +382,12 @@
     {
       "name": "stack_trace",
       "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "state_notifier",
+      "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/state_notifier-0.7.2+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -423,7 +441,7 @@
     },
     {
       "name": "video_player_avfoundation",
-      "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/video_player_avfoundation-2.3.2",
+      "rootUri": "file:///Users/Travisk/.pub-cache/hosted/pub.dartlang.org/video_player_avfoundation-2.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -458,7 +476,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-30T23:26:03.202109Z",
+  "generated": "2022-05-02T04:52:56.763467Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

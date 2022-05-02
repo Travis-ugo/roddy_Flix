@@ -1,0 +1,13 @@
+#Mon May 02 06:09:46 WAT 2022
+path.3=classes4.dex
+path.2=classes3.dex
+path.1=classes2.dex
+path.0=classes.dex
+base.3=/Users/Travisk/Flutter_Applications/roddy/build/app/intermediates/dex/debug/mergeDexDebug/classes4.dex
+base.2=/Users/Travisk/Flutter_Applications/roddy/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
+base.1=/Users/Travisk/Flutter_Applications/roddy/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.0=/Users/Travisk/Flutter_Applications/roddy/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex

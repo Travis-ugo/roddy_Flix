@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/custom_dialog.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/Users/Travisk/Flutter_Applications/roddy/build/video_player_android/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/res/layout/notification_action.xml"
+    }
+]
