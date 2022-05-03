@@ -22,7 +22,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="calorie_tracker"
+        android:label="roddy"
         android:supportsRtl="true" >
         <activity
             android:name="com.example.roddy.MainActivity"

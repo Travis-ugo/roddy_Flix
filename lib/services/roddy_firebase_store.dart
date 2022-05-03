@@ -21,10 +21,11 @@ class RoddyDataBaseFunctions {
   }
 
   Stream<List<RoddyMovies>> getListOfMovies() {
-    return _firebaseFirestore.collection('').snapshots().map((snapshot) =>
-        (snapshot)
-            .docs
-            .map((docs) => RoddyMovies.fromJson(docs.data()))
-            .toList());
+    return _firebaseFirestore.collection('Movies').snapshots().map(
+          (snapshot) => (snapshot)
+              .docs
+              .map((docs) => RoddyMovies.fromJson(docs.data()))
+              .toList(),
+        );
   }
 }

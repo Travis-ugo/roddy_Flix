@@ -31,7 +31,7 @@
 22-->[androidx.core:core:1.7.0] /Users/Travisk/.gradle/caches/transforms-2/files-2.1/f9455c21b56d148374e88e8b9fa9c592/core-1.7.0/AndroidManifest.xml:24:18-86
 23        android:debuggable="true"
 24        android:icon="@mipmap/ic_launcher"
-25        android:label="calorie_tracker"
+25        android:label="roddy"
 26        android:supportsRtl="true" >
 26-->[com.facebook.android:facebook-login:13.2.0] /Users/Travisk/.gradle/caches/transforms-2/files-2.1/2e6ac11386183c3793ad15f7ba63b7f5/jetified-facebook-login-13.2.0/AndroidManifest.xml:28:18-44
 27        <activity
