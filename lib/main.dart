@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:roddy/utils/roddy_colors.dart';
 import 'package:roddy/views/auth_views/finish_setting_up.dart';
+import 'package:roddy/views/movie_display_views/movies.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           white: TextTheme(),
         ),
       ),
-      home: FinishSettingUpYourAccount(),
+      home: CarryOn(), //FinishSettingUpYourAccount(),
     );
   }
 }

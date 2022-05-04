@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roddy/model/roddy_movie.dart';
 import 'package:roddy/utils/dimensions.dart';
 import 'package:roddy/widgets/button.dart';
 import 'package:roddy/widgets/select_profile_box.dart';
@@ -23,6 +24,11 @@ class WhoIsWatching extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            // StreamBuilder<RoddyMovies>(
+            //   builder: (context, snapshot) {
+            //     return SelectProfileBox();
+            //   },
+            // ),
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: Wrap(
