@@ -1,10 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-var sizeProvider = StateProvider<double>(((ref) => 1));
-var colorProvider = StateProvider<Color>((ref) => Colors.pink);
-StateProvider<bool> startAnimation = StateProvider<bool>((ref) => false);
+import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/widgets/circle_with_icon_button.dart';
+import 'package:roddy/widgets/text_descption.dart';
 
 class ExpandableBox extends HookWidget {
   const ExpandableBox({Key? key}) : super(key: key);
@@ -12,63 +11,152 @@ class ExpandableBox extends HookWidget {
   @override
   Widget build(BuildContext context) {
     AnimationController _animationController =
-        useAnimationController(duration: Duration(milliseconds: 500));
-    double maxSlide = 225.0;
-    double slide = maxSlide * _animationController.value;
-    // double scale = 1 - (_animationController.value * 0.3);
-    void toggleAnimationFunction() {
-      _animationController.isDismissed
-          ? _animationController.forward()
-          : _animationController.reverse();
+        useAnimationController(duration: Duration(milliseconds: 200));
+
+    AnimationController _animationControllerForExpandableBoxHeight =
+        useAnimationController(duration: Duration(milliseconds: 50));
+
+    Animation<double> animationCurves =
+        CurvedAnimation(curve: Curves.linear, parent: _animationController);
+
+    Animation<double> _animationHeightDouble =
+        Tween<double>(begin: 170, end: 340)
+            .animate(_animationControllerForExpandableBoxHeight);
+
+    Animation<double> _animationWidthDouble =
+        Tween<double>(begin: 280.0, end: 345.0).animate(_animationController);
+
+    // Animation<double> _animationFlexInt() =>
+    //     Tween<double>(begin: 0.0, end: 2.0).animate(animationCurves);
+
+    void toggleAnimationFunction(bool value) {
+      value ? _animationController.forward() : _animationController.reverse();
     }
 
-    return Consumer(builder: (context, ref, _) {
-      var colorPro = ref.watch(colorProvider.state);
-      var height = ref.watch(sizeProvider.state);
-      return InkWell(
-        onHover: (value) {
-          toggleAnimationFunction();
-          // colorPro.state = Colors.blue;
-        },
-        onTap: () {
-          toggleAnimationFunction();
-          colorPro.state = Colors.orangeAccent;
-          height.state = 3.0;
-        },
-        child: AnimatedBuilder(
-          animation: _animationController,
-          builder: (context, child) {
-            var animationHeight = height.state * _animationController.value;
-            return Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-              height:
-                  maxSlide, //slide, //200, //* animationHeight, //200 * height.state,
-              width: 280,
-              child: Stack(
-                children: [
-                  // Image.network(''),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'R',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
+    Future openExpandableHeight(bool value) async {
+      value
+          ? _animationControllerForExpandableBoxHeight.forward()
+          : _animationControllerForExpandableBoxHeight.reverse();
+    }
+
+    var mediaQuery = MediaQuery.of(context).size;
+
+    var newHeight = 340 / 2;
+    return AnimatedBuilder(
+      animation: _animationController,
+      builder: (context, child) {
+        return InkWell(
+          onHover: (value) async {
+            toggleAnimationFunction(value);
+            await openExpandableHeight(value);
+          },
+          onTap: () {},
+          child: Container(
+            height: _animationHeightDouble.value,
+            width: mediaQuery.width > 600
+                ? _animationWidthDouble.value
+                : mediaQuery.height / 2.5,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: newHeight,
+                    width: double.maxFinite,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 25,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black, //Color.fromARGB(136, 11, 11, 11),
+                      borderRadius: BorderRadius.vertical(
+                        // top: Radius.circular(7),
+                        bottom: Radius.circular(10),
                       ),
                     ),
-                  )
-                ],
-              ),
-              decoration: BoxDecoration(
-                color: colorPro.state,
-                borderRadius: BorderRadius.circular(5),
-              ),
-            );
-          },
-        ),
-      );
-    });
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            circleWithIconButton(
+                              CupertinoIcons.play,
+                              mediaQuery,
+                            ),
+                            circleWithIconButton(
+                              CupertinoIcons.plus,
+                              mediaQuery,
+                            ),
+                            circleWithIconButton(
+                                CupertinoIcons.hand_thumbsup, mediaQuery),
+                            Spacer(),
+                            circleWithIconButton(
+                                CupertinoIcons.chevron_down, mediaQuery)
+                          ],
+                        ),
+                        Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            textInfo('97% Match'),
+                            SizedBox(width: 10),
+                            textInfo('13+'),
+                            SizedBox(width: 10),
+                            textInfo('3 Seasons'),
+                            SizedBox(width: 10),
+                            textInfo('HD'),
+                          ],
+                        ),
+                        Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            textInfo('Rousing'),
+                            circleAvatar(),
+                            textInfo('Exciting'),
+                            circleAvatar(),
+                            textInfo('Drama Anime'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  height: newHeight,
+                  width: double.maxFinite,
+                  child: Stack(children: [
+                    // Image.network(''),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'R',
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+                  decoration: BoxDecoration(
+                    color: Colors.orangeAccent,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            decoration: BoxDecoration(
+              borderRadius: borderRadiusRY(5),
+            ),
+          ),
+        );
+      },
+    );
   }
 }
 
@@ -79,108 +167,6 @@ class CarryOn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: ExpandableBox()),
-    );
-  }
-}
-
-class Example extends HookWidget {
-  const Example({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final animationController = useAnimationController(
-      duration: const Duration(milliseconds: 250),
-    );
-    double maxSlide = 225.0;
-
-    void _onDragStart(DragStartDetails details) {
-      double minDragStartEdge = 0.3;
-      double maxDragStartEdge = 10;
-      bool isDragOpenFromLeft = animationController.isDismissed &&
-          details.globalPosition.dx < minDragStartEdge;
-      bool isDragCloseFromLeft = animationController.isCompleted &&
-          details.globalPosition.dx > maxDragStartEdge;
-
-      bool canBeDragged = isDragOpenFromLeft || isDragCloseFromLeft;
-    }
-
-    void _onDragUpdate(DragUpdateDetails details) {
-      bool canBeDragged = true;
-      // bool  _canBeDragged;
-      if (canBeDragged) {
-        double delta = details.primaryDelta! / maxSlide;
-        animationController.value += delta;
-      }
-    }
-
-    void _onDragEnd(DragEndDetails details) {
-      if (animationController.isDismissed || animationController.isCompleted) {
-        return;
-      }
-      if (details.velocity.pixelsPerSecond.dx.abs() >= 345) {
-        double visualVelocity = details.velocity.pixelsPerSecond.dx /
-            MediaQuery.of(context).size.width;
-
-        animationController.fling(velocity: visualVelocity);
-      } else if (animationController.value < 0.5) {
-        animationController.forward();
-      } else {
-        animationController.reverse();
-      }
-    }
-
-    void toggle() {
-      animationController.isDismissed
-          ? animationController.forward()
-          : animationController.reverse();
-    }
-
-    return Scaffold(
-      body: GestureDetector(
-        onHorizontalDragStart: _onDragStart,
-        onHorizontalDragEnd: _onDragEnd,
-        onHorizontalDragUpdate: _onDragUpdate,
-        onTap: toggle,
-        child: AnimatedBuilder(
-          animation: animationController,
-          builder: (BuildContext context, Widget? child) {
-            double slide = maxSlide * animationController.value;
-            double scale = 1 - (animationController.value * 0.3);
-            return Stack(
-              children: [
-                // const WidgetDrawer(),
-                Transform(
-                  transform: Matrix4.identity()
-                    ..translate(slide)
-                    ..scale(scale),
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlueAccent,
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     blurRadius: 30 / animationController!.value,
-                      //     spreadRadius: 2 / animationController!.value,
-                      //     color:
-                      //         Colors.lightBlueAccent.shade100.withOpacity(0.7),
-                      //     offset: Offset.fromDirection(
-                      //       -10,
-                      //       25,
-                      //     ),
-                      //   ),
-                      // ],
-                      borderRadius: BorderRadius.circular(
-                        50 * animationController.value,
-                      ),
-                    ),
-                    // child: const HomePageWidget(),
-                  ),
-                ),
-              ],
-            );
-          },
-        ),
-      ),
     );
   }
 }
