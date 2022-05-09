@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/views/movie_display_views/app_bar.dart';
 import 'package:roddy/widgets/circle_with_icon_button.dart';
 import 'package:roddy/widgets/text_descption.dart';
 
@@ -160,13 +162,29 @@ class ExpandableBox extends HookWidget {
   }
 }
 
-class CarryOn extends StatelessWidget {
+class CarryOn extends ConsumerWidget {
   const CarryOn({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ScrollController scrollController = ScrollController();
     return Scaffold(
-      body: Center(child: ExpandableBox()),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        scrollController.jumpTo(100);
+      }),
+      body: ListView(
+        controller: scrollController,
+        children: [
+          RoddyAppBar(),
+          Text('AHh'),
+          Container(
+            height: 900,
+            color: Colors.greenAccent,
+            width: double.maxFinite,
+          ),
+          Text('AHh'),
+        ],
+      ),
     );
   }
 }
