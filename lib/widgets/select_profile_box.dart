@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 
 class SelectProfileBox extends StatelessWidget {
   const SelectProfileBox({Key? key}) : super(key: key);

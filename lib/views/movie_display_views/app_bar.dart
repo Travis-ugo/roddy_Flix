@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 
 Widget listRow(context) {
   return MediaQuery.of(context).size.width > 800

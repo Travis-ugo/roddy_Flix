@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 
 Widget filledButton(BuildContext context) {
   return Container(

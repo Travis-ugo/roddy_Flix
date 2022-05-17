@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roddy/model/roddy_movie.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 import 'package:roddy/widgets/button.dart';
 import 'package:roddy/widgets/select_profile_box.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 import 'package:roddy/utils/roddy_colors.dart';
 import 'package:roddy/widgets/input_text.dart';
 import 'package:roddy/widgets/roddy_footer.dart';

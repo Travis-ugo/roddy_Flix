@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roddy/utils/dimensions.dart';
+import 'package:roddy/model/dimensions.dart';
 
 Widget circleWithIconButton(IconData circleWithIconButtonIcon, mediaQuery) {
   double heightAndWidth = mediaQuery.width > 600 ? 40 : 30;
